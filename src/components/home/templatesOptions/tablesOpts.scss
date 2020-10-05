@@ -1,0 +1,94 @@
+.TablesOptionsWrapper{
+    grid-area: options;
+    min-width: 120px;
+    background-color: #0e3142;
+    display: grid;
+    background-image: url('/public/images/sideCanvasBG.png');
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "header"
+        "btns"
+        "templatesView";
+    *{
+        user-select: none;
+    }
+    .canvasGrid{
+        grid-area: canvas;
+    }
+    .tablesSideHeader{
+        grid-area: header;
+        color:#eee;
+    }
+    .templatesList{
+        height: 64vh;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 10px;
+        display: block;
+        grid-area: templatesView;
+        .templateHolder{
+            margin-bottom: 10%;
+            animation: .6s faidin;
+            border: 1px dashed gray;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            h4{
+                font-variant-caps: all-small-caps;
+                color: #eee;
+                font-size: 1.5em;
+                margin: 0;
+                margin-bottom: 1%;
+            }
+            .canvasTableItem{
+                position: sticky !important;
+                // >div{
+                    // margin: 0 auto;
+                    // max-width: 100%;
+                    // min-width: 90px;
+                    // min-height: 90px;
+                // }
+                cursor: grab;
+                &.isDragging{
+                    background-color: transparent;
+                    opacity: 0.4;
+                    cursor: grabbing;
+                }
+
+            }
+            &.hover{
+                &:after{
+                    content: '->';
+                    position: absolute;
+                    width: 100%;
+                    height:100%;
+                   
+                }
+            }
+        }
+    }
+    .btnsWrapper{
+        display: flex;
+        justify-content: center;
+        grid-area: btns;
+        .circle{
+            width: 50px;
+            height: 50px;
+            background: #0c3548;
+            border-radius: 50%;
+            display: grid;
+            color: #fff;
+            font-weight: bold;
+            align-items: center;
+            border: 2px solid #fff;
+            box-shadow: 1px 2px 9px 5px rgba(0, 0, 0, 0.2),
+                        1px 3px 0px 0px rgba(0, 0, 0, 0.14),
+                        1px 1px 1px 0px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            transition: all .6s;
+            &:hover{
+                background: #347391;
+            }
+        }
+    }
+}

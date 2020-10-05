@@ -1,0 +1,29 @@
+
+.basicInput{
+    padding: 5px;
+    border: 0;
+    border-radius: 3px;
+    &.inputOnly{
+        border: 0;
+        border-bottom: 2px solid #a6265f;
+        background: transparent;
+    }
+}
+
+
+.labelSelect{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-grow: 1;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.labelInputSelect{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    flex-grow: 1;
+    align-items: center;
+    input{
+        text-align: right;
+    }
+}

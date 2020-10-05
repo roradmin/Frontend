@@ -1,0 +1,119 @@
+.permissionsPageWrapper{
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    .permissionsList{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: #041c27;
+        height: 500px;
+        overflow: scroll;
+        .perBox{
+            width: 200px;
+            font-size: 19px;
+            height: 35px;
+            display: grid;
+            align-items: center;
+            cursor: pointer;
+            border:1px solid #333;
+            margin: 2px;
+            background-color: #7f817f;
+            color:#fff;
+            transition: .8s background-color,.7s transform;
+
+            &:hover{
+                transform: scale(1.2);
+            }
+            &.false{
+                background-color:#e85858;
+            }
+            &.true{
+                background-color: #a5dc86;
+                color: #000;
+            }
+        }
+    }
+    .permissions{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .userPermissions{
+            font-size: 20px;
+            background-color: #041c27;
+            input{
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 45%;
+                height: 30px;
+                padding-left: 5%;
+            }
+            .usersList{
+                display: grid;
+                max-height: 30vh;
+                overflow-y: scroll;
+                .userItem{
+                    transition: 0.6s background-color;
+                    cursor: pointer;
+                    width: 50%;
+                    color: #eee;
+                    justify-self: center;
+                    h4{
+                        margin:0;
+                        transition:0.6s transform;
+                        &:hover{
+                            transform: scale(1.3);
+                        }
+                    }
+                    &:hover{
+                        background-color:#d4ffc3; 
+                    }
+                }
+                .goBack{
+                    cursor: pointer;
+                    font-size: 3vh;
+                    color: red;
+                    font-weight: bold;
+                    position: fixed;
+                }
+            }
+        }
+    }
+}
+.button15 {
+	color: rgba(255,255,255,1);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	position: relative;
+	border: 1px solid rgba(255,255,255,0.5);
+    overflow: hidden;
+
+    &::after{
+        -webkit-transition-delay: 0.2s; /* Safari */
+        transition-delay: 0.2s;
+    }
+    &:hover::before,&:hover::after{
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+    &::before,&::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(255,255,255,0.25);
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        -webkit-transform: translate(0,-100%);
+        transform: translate(0,-100%);
+        -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+        transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+}
+

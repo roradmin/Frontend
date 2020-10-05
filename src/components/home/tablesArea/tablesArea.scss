@@ -1,0 +1,72 @@
+.TablesAreaWrapper{
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 1fr 32vh;
+    grid-template-areas: "canvas options";
+    height: 100%;
+    position: relative;
+    .TablesCanvasWrapper{
+        display: grid;
+        grid-template-columns: 1fr 30vh;
+        grid-template-areas: "canvas options";
+        position: relative;
+    }
+    .AskForName{
+        >div{
+            padding:0;
+            margin: 0;
+        }
+    }
+    .createShapeComponent{
+        justify-content: start;
+        display: grid;
+        grid-template-areas:
+            "input"
+            "btnHolder";
+        grid-template-rows: 1fr 1fr;
+
+        .lineDownInput{
+            border: 0;
+            border-bottom: 2px solid;
+            width: 200px;
+            font-size: calc(17px + 0.4vw);
+            height: 25px;
+            align-self: center;
+            justify-self: center;
+            font-family: Lato;
+            background: transparent;
+            color: #333;
+            grid-area: input;
+        }
+        .btnHolder{
+            grid-area: btnHolder;
+            button{
+                position: absolute;
+                bottom: 4%;
+                right: 2%;
+            }
+        }
+
+        .nameHolder{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pageControllers{
+            display: flex;
+            font-size: calc(40px + 0.8vw);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            span{
+                color:#000;
+                transition:  all .5s;
+                cursor: pointer;
+                &:hover{
+                    color: #041c27;
+                }
+            }
+        }
+    }
+}

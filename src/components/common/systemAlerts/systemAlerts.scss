@@ -1,0 +1,106 @@
+
+.alertsBackground{
+    z-index: 120;
+    .PopUpComponent{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-width: 400px;
+        width: 20vw;
+        min-height: 22vh;
+        background-color: #ebebeb;
+        border-radius: 4px;
+        border: 1.4px solid #eee;
+        box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.2), 1px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+        animation: fadein .5s;
+
+        *{
+          user-select: none;
+        }
+        @keyframes fadein {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        svg{
+            color: #0e3142;
+            margin-top: 6%;
+            align-self: center;
+            animation: getIn 1.2s;
+            &.success{
+                color: #118c00;
+            }
+            &.error{
+                color: #a70000;
+            }
+            &.warning{
+                color: #b58300;
+            }
+        }
+        .messageHeader{
+            font-size: calc(25px + 0.2vw);
+            color: #0e3142;
+            font-variant-caps: all-petite-caps;
+            margin: 2% 0 2% 0;
+            font-family: Lato;
+        }
+          @-webkit-keyframes rotate {
+            0% {
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+          @keyframes rotate {
+            0% {
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+        .textarea{
+            background-color: #fff;
+            border-radius: 1px;
+            border: 0px;
+            margin: 0px;
+            resize: none;
+            margin: 1.5%;
+            text-align: center;
+            font-size: calc(12px + 0.2vw);
+            padding: 1.5%;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            margin: 0 5% 0 5%;
+            justify-content: center;        
+            border: 1.4px solid #fff;
+            box-shadow: 3px 2px 5px 0px rgba(255, 255, 255, 0.2), 1px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+        }
+        span{
+            font-size: 42px;
+            font-weight: bold;
+        }
+        .popupButtonsWrapper{
+            display: flex;
+            justify-content: space-between;
+            margin: 3% 5% 3% 5%;
+        }
+    }
+}
+
+  @keyframes getIn {
+    from {
+      transform: scale(0.0);    
+      opacity: 0;
+    }
+  
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }

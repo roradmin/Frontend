@@ -1,0 +1,64 @@
+.headerWrapper{
+    grid-area: header;
+    //z-index: 99;
+    *{
+        user-select: none;
+    }
+    .desktopHeader{
+        height: 100%;
+        display: grid;
+        grid-template-areas: "logo links avatar";
+        grid-template-columns: 1.5fr 7fr 2fr;
+        --sidesWidth: 18%;
+        background-color: #0a2835;
+        .logoHolder{
+            grid-area: logo;
+            background-color: #000;
+            color:#fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 20px;
+            width:200px;
+        }
+        .links{
+            align-self: center;
+            text-align: center;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            color: #eee;
+            font-weight: bold;
+            font-variant-caps: all-petite-caps;
+            svg{
+                margin-right: 4px;
+            }
+            .runningPath{
+                margin-right: 4px;
+                cursor: pointer;
+                &:hover{
+                    color: #8a1046;
+                }
+                &:after{
+                    content: '/';
+                    margin-left: 4px;
+                    color: #eee !important;
+
+                }
+            }
+        }
+    }
+    .mobileHeader{
+
+    }
+
+    .loginUser{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: #eee;
+        svg{
+            margin-right: 7%;
+        }
+    }
+}

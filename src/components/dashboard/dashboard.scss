@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+.dashboardWrapper{
+    background-color: #04212d;
+    margin-left: 3pt;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    .dashTopIntro{
+      //  height: 9vh;
+        grid-area: intro;
+    }
+    .dashTopIntro{
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dashTop{
+        grid-area: top;
+        min-height: 65px;
+
+    }
+    .mainContent{
+        display: flex;
+        flex-grow: 1;
+        max-height: 72vmin;
+        padding: 1%;
+        box-sizing: border-box;
+        .dashLeftSide,.dashRightSide{
+            width: 12vw;
+            overflow: hidden;
+            
+        }
+        .dashRightSide{
+            grid-area: right;
+        }
+        .dashLeftSide{
+            grid-area: left;
+        }
+        .content{
+            flex-grow: 1;
+            border-radius: 0;
+        }
+    }
+    .bottom{
+        grid-area: bottom;
+        display: flex;
+        justify-content: space-between;
+
+        >div{
+            &:nth-child(1){
+                flex-grow: 1;
+            }
+        }
+    }
+
+}

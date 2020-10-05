@@ -1,0 +1,135 @@
+
+  a,button{
+    text-decoration: none;
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+        outline:0;
+    }
+}
+$blue: #041c27;
+$green: #7ba067;
+.IngredientMainPageWrapper{
+    height: 100%;
+    position: relative;
+}
+.creationPopupWrapper{
+    background-color: $blue;
+    height: 30vh;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    width: 34vw;
+    display: grid;
+    padding: 1%;
+    color:#eee;
+    .closeCreation{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        font-size: 36px;
+        color: #ffeded;
+        cursor: pointer;
+    }
+    .labelValue{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .inputsWrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+.ingredientDataWrapper{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .ingredientForm{
+        display: grid;
+        grid-template-rows: 50% 50%;
+        flex-grow: 1;
+        position: relative;
+
+        // loop
+        // $social: (
+        //     'facebook': #3b5999,
+        //     'twitter': #55acee,
+        //     'linkedin': #0077B5,
+        //     'google': #dd4b39,
+        //   );
+          
+        // @each $name, $color in $social {
+        //     // selector based on href name
+        //     [href*='#{$name}'] {
+        //         background: $color;
+                    
+        //         &::before {
+        //             content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15542/#{$name}.png);
+        //         }
+        //     }
+        // }
+        .firstRow{
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background-color: #e5dede;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+            min-width: 540px;
+            .inputs{
+                flex: 1 1 auto; // grow shrink basis
+                >*{
+                    max-width:444px;
+                }
+                .labelInput{
+                    min-width: 27vw;
+                }
+            }
+        }
+        .orderDetails{
+            height: 100%;
+            background-color: rgb(10,40,53);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            >div{
+                width: 33.3%;
+            }
+        }
+    }
+    .stockWrapper{
+        background-color: #0a2835;
+        border-left: 1pt solid #ccc;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right, #0a2835, #04212d);
+       
+        overflow: hidden;
+        animation: widthAnimation .7s;
+    }
+    
+}
+@keyframes widthAnimation {
+    from {
+        max-width: 0px;
+    }
+    100% {
+        max-width: 500px
+    }
+  }
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }

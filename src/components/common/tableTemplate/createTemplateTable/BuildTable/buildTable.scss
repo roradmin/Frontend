@@ -1,0 +1,75 @@
+.styledArea{
+    user-select: none;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        ". top ."
+        "left middle right"
+        ". bottom .";
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-rows: 1fr 2.5fr 1fr;
+        align-items: center;
+        justify-content: center;
+    h2{
+        font-size: 1em;
+    }
+    input,span,button{
+        user-select: none;
+    }
+       .tableName{
+            font-variant-caps: all-petite-caps;
+        }
+        .inputholder{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .inputWrapper{
+                user-select: none;
+                width: 120px;
+                background-image: url('/public/images/tableBrown.png');
+                background-color: rgb(55, 28, 3);
+                color: #fff;
+                border-radius: 3px;
+                border: 1.4px solid #fff;
+                box-shadow: 3px 2px 5px 0px rgba(255, 255, 255, 0.2), 1px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+                justify-self: center;
+                align-self: center;
+                span,input{
+                    width: 33%;
+                    user-select: none;
+                }
+                input{
+                    text-align: center;
+                    border: 1px solid #333;
+                    top: 0px;
+                    border: 0;
+                    background: transparent;
+                    color:#eee;
+                    font-size: calc(25px + 0.4vw);
+                }
+                input[type=number]::-webkit-inner-spin-button, 
+                input[type=number]::-webkit-outer-spin-button { 
+                  -webkit-appearance: none;
+                }
+                span{
+                    height: auto;
+                    height: 100%;
+                    font-size: calc(25px + 0.4vw);
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+            &.top{
+                grid-area: top;
+            }
+            &.right{
+                grid-area: right;
+            }
+            &.bottom{
+                grid-area: bottom;
+            }
+            &.left{
+                grid-area: left;
+            }
+        }
+}

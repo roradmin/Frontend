@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Exo|Rubik|Montserrat|Lato|Merriweather|Titillium+Web|Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>RestPP</title>
+    <style>
+      body{
+        margin: 0;
+      }
+      .appShell{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-rows: 200px 100px;
+        background-color: #041c27;
+        overflow: hidden;
+
+      }
+      .appShell h1{
+        color:#fff;
+      }
+      .appShell .ball{
+        animation: bounce 0.7s infinite;
+        font-size: 100px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #eee;
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+        animation-iteration-count: infinite;
+      }
+      @keyframes bounce {
+      from { transform: translate3d(0, 0, 0);}
+      to { transform: translate3d(0, 200px, 0);}
+    }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class = "appShell">
+          <span class = "ball"></span>
+          <h1>Loading...</h1>
+      </div>
+  </div>
+  <!-- <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./service-worker.js')
+          .then((registration) => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, (err) => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+  </script> -->
+  </body>
+</html>

@@ -1,0 +1,12 @@
+.sideNavWrapper{
+    background-color: #041c27;
+    //width: 9vw;
+    //position:fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-area: sidenav;
+    >div{
+        display: grid;
+    }
+}

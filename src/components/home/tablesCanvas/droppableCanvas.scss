@@ -1,0 +1,45 @@
+.TablesAreaWrapper{
+    .DroppableCanvas{
+        background-color: #eee;
+        border: 1rem solid #062d40;
+        display: flex;
+        flex-direction: column;
+        //min-width: 1000px;
+        //min-height: 750px;
+        overflow: hidden;
+        // background-image: url('/public/images/canvasArea.png');
+        h2{
+            margin-bottom: 0;
+        }
+        *{
+            user-select: none;
+        }
+        .areaWrapper{
+            height: 100%;
+            width: 100%;
+            &.canDrop{
+                background-color: #aaaaaa;
+                &.isOver{
+                    background-color: #a5dc86;
+                }
+            }
+        }
+        .tblsArea{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            .canvasTableItem{
+                position: absolute;
+                cursor: grab;
+                transition: .2s all;
+                &:hover{
+                    border: 2px dashed gray;
+                }
+                &.onDrag{
+                    cursor: grabbing;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

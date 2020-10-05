@@ -1,0 +1,79 @@
+$linkColor: #eee;
+$linkHover: #c6538c;
+$linkSelected: #c6538c;
+
+.sideContent{
+    .routesList{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        list-style-type: none;
+        color: #eee;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        *{
+            user-select: none;
+        }
+
+        li,.link,.subMenu > li{
+            cursor: pointer;
+            color: $linkColor;
+            &:hover{
+                color: $linkHover; 
+            }
+        }
+        li{
+            align-items: center;
+            color: $linkColor;
+            grid-template-rows: auto 1fr;
+            >span{
+                display: grid;
+                align-items: center;
+                grid-template-columns: auto 1fr;
+                grid-template-areas: "icon label";      
+                padding: 3%;         
+                transition: .4s all;
+                &.current{
+                    background-color: #0f3748;
+                }  
+                svg{
+                    grid-area: icon;
+                    margin-left: 8pt;
+                    margin-right: 6pt;
+                }
+                span{
+                    grid-area: label;
+                    font-size: 13pt;
+                }
+            } 
+            .subMenu{
+                max-height: 0;
+                grid-area: subm;
+                font-family: Candara;
+                font-size: 10pt;
+                padding: 0;
+                transition: max-height 0.5s  ease-in;
+                overflow: hidden;
+                margin: 3% 0% 0% 15%;
+                .subItem{
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    align-items: center;
+                    &.current{
+                        color:$linkSelected;
+                    }
+                    svg{
+                        margin-right: 30%;
+                    }
+                }
+                &.open{ 
+                    max-height: 90px;
+                    transition: max-height 0.7s ease-out;
+                    //max-height: none;
+                    display: block;
+                }
+            }
+        }
+    }
+}
